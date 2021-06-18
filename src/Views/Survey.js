@@ -8,6 +8,7 @@ import { Component } from "react";
 import axios from "axios";
 import SurveyDone from "./SurveyDone";
 import SurveyResults from "./SurveyResults";
+import ReactToPrint from "./../Components/ReactToPrint";
 import { json } from "../Surveys/surveyFraunhofer_json2";
 
 // import "jquery-ui/themes/base/all.css";
@@ -137,9 +138,11 @@ class Test extends Component {
     //Fragebogen beendet:
     var onSurveyCompletion = this.state.isCompleted ? (
       <div>
-        {/* <SurveyDone /> */}
-        {/* {this.state.survey_results[0]} */}
-        <SurveyResults data={this.state.survey_results[0]}/>
+        {/* <SurveyResults data={this.state.survey_results[0]}/> */}
+        
+        <ReactToPrint data={this.state.survey_results[0]}/>
+
+        {/* <DownloadToPDF data={this.state.survey_results[0]}/> */}
         
       </div>
     ) : null;
